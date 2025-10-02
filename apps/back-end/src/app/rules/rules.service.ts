@@ -89,6 +89,13 @@ export class RulesService {
           );
           evaluatedRes[formatedAttributeName] = hasValue;
         }
+        if (operator.name === 'not in') {
+          const arrayValue = value.split(',');
+          const hasValue = arrayValue.every(
+            (v) => v !== context[formatedAttributeName]
+          );
+          evaluatedRes[formatedAttributeName] = hasValue;
+        }
       }
     }
     return evaluatedRes;
