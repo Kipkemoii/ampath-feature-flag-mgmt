@@ -1,15 +1,4 @@
-import { IsInt, IsOptional } from 'class-validator';
+import { PartialType } from '@nestjs/swagger';
+import { CreateRuleDto } from './create-rule.dto';
 
-export class UpdateRuleDto {
-  @IsInt()
-  @IsOptional()
-  featureFlagId: number;
-  @IsInt()
-  @IsOptional()
-  attributeId: number;
-  @IsInt()
-  @IsOptional()
-  operatorId: number;
-  @IsOptional()
-  value: string;
-}
+export class UpdateRuleDto extends PartialType(CreateRuleDto) {}
