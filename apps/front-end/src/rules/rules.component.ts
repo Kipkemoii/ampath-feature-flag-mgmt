@@ -285,7 +285,6 @@ export class RulesComponent implements OnInit {
       )
       .subscribe();
   }
-  rulesBtnClicked($event: any) {}
   deleteBtnClicked($event: any) {
     this.dialog
       .open(VoidFormComponent, {
