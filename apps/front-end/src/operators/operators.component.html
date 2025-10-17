@@ -1,3 +1,10 @@
 <div>
-     <app-table [columns]="columns" [dataSource]="dataSource" [busy]="busy" (addBtnClicked)="addBtnClicked()" (editBtnClicked)="editBtnClicked($event)"></app-table>
+  <app-table
+    [columns]="columns"
+    [dataSource]="dataSource"
+    [busy]="busy"
+    (addBtnClicked)="addBtnClicked()"
+    (editBtnClicked)="editBtnClicked($event)"
+    (deleteBtnClicked)="deleteBtnClicked($event)"
+  ></app-table>
 </div>

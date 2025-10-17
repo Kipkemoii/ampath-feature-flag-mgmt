@@ -1,14 +1,17 @@
 <h2 mat-dialog-title>{{ title }}</h2>
 <mat-dialog-content>
     <form class="app-form" [formGroup]="pageForm" (submit)="onFormSubmit()">
-        <mat-form-field appearance="outline">
+         <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="name" name="name" formControlName="name" />
-            <mat-error *ngIf="pageForm.value.name">Name is required</mat-error>
+            <mat-select  name="name" formControlName="name" required>
+                @for (opt of operatorOptions; track opt.value) {
+                <mat-option [value]="opt.value">{{opt.label}}</mat-option>
+                }
+        </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <input matInput [(ngModel)]="description" name="description" formControlName="description" />
+            <input matInput  name="description" formControlName="description" />
             <mat-error *ngIf="pageForm.value.description">Description is required</mat-error>
         </mat-form-field>
         <div class="form-btn">        
