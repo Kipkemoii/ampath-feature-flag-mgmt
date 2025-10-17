@@ -8,31 +8,31 @@ import { RulesComponent } from '../rules/rules.component';
 import { AuthGuard } from '../guards/auth_guard';
 
 export const appRoutes: Route[] = [
-    {
-        path: '',
-        component: LoginComponent
-    },
-    {
-        path: 'home',
-        component: NavBarComponent,
-        canActivate: [AuthGuard],
-        children: [
-            {
-                path: 'feature-flags',
-                component: FeatureFlagsComponent,
-            },
-            {
-                path: 'operators',
-                component: OperatorsComponent
-            },
-            {
-                path: 'attributes',
-                component: AttributesComponent
-            },
-            {
-                path: 'feature-flags/:id/rules/:name/:description',
-                component: RulesComponent
-            }
-        ]
-    }
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'home',
+    component: NavBarComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'feature-flags',
+        component: FeatureFlagsComponent,
+      },
+      {
+        path: 'operators',
+        component: OperatorsComponent,
+      },
+      {
+        path: 'attributes',
+        component: AttributesComponent,
+      },
+      {
+        path: 'feature-flags/:id/rules/:name/:description',
+        component: RulesComponent,
+      },
+    ],
+  },
 ];
